@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/title_state_color"
+        >
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tl_tab"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_toStartOf="@+id/rl_shen"
+            app:tabIndicatorHeight="0dp"
+            app:tabBackground="@drawable/qiu_tab_background_selector"
+            app:tabTextColor="@color/title_tab_no_select"
+            app:tabSelectedTextColor="@color/color_white"
+            app:tabTextAppearance="@style/tab_text_size"
+            >
+        </android.support.design.widget.TabLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_shen"
+            android:layout_width="?actionBarSize"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/iv_qiu_add">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_brightness_1_black_24dp"
+                android:gravity="center"
+                android:src="@drawable/ic_add_black_24dp"
+                android:text="审"
+                android:textSize="14sp"
+                android:textColor="@color/title_state_color"
+                />
+        </RelativeLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iv_qiu_add"
+            android:layout_width="?actionBarSize"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@drawable/ic_add_black_24dp"
+            />
+    </RelativeLayout>
+    <shi.qiu.com.org.qiushi.view.NoScrollAnimalViewPager
+        android:id="@+id/vp_qiu_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_title"
+        />
+</RelativeLayout>

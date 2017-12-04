@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">QiuShi</string>
+
+    <!--底部菜单栏-->
+    <string name="title_qiu_shi">糗事</string>
+    <string name="title_qiu_shi_friends">糗友圈</string>
+    <string name="title_live_broadcast">直播</string>
+    <string name="title_live_notes">小纸条</string>
+    <string name="title_me">我</string>
+
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>

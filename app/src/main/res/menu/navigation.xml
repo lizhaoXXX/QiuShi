@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_qiushi"
+        android:icon="@drawable/ic_insert_emoticon_black_24dp"
+        android:title="@string/title_qiu_shi"/>
+
+    <item
+        android:id="@+id/navigation_friends"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_qiu_shi_friends"/>
+
+    <item
+        android:id="@+id/navigation_live_tv"
+        android:icon="@drawable/ic_live_tv_black_24dp"
+        android:title="@string/title_live_broadcast"/>
+
+    <item
+        android:id="@+id/navigation_notes"
+        android:icon="@drawable/ic_speaker_notes_black_24dp"
+        android:title="@string/title_live_notes"/>
+
+    <item
+        android:id="@+id/navigation_me"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/title_me"/>
+
+</menu>
