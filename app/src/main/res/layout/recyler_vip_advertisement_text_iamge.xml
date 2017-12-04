@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="?actionBarSize"
+            android:layout_height="?actionBarSize"
+            android:contentDescription="@string/head_portrait"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@+id/iv_head"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:textColor="@color/vip_title_name"
+            android:textSize="@dimen/vip_text_16sp"
+            android:layout_marginStart="@dimen/vip_text_name_8dp"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_vip_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_head"
+        android:ellipsize="end"
+        android:maxLines="10"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:textColor="@color/vip_title_text"
+        android:textSize="@dimen/vip_text_16sp"
+        />
+
+    <ImageView
+        android:id="@+id/iv_content_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_vip_content"
+        android:contentDescription="@string/pictures"
+        android:maxHeight="500dp"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:scaleType="center"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_below="@+id/iv_content_image"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:textColor="@color/vip_title_name"
+        android:textSize="@dimen/vip_text_12sp"
+        />
+</RelativeLayout>

@@ -12,4 +12,12 @@
     <!--底部菜单-->
     <color name="bottom_text_select">#FEBB15</color>
     <color name="bottom_text_no_select">#CED2D5</color>
+
+    <!--专享-->
+    <color name="vip_title_name">#6F6F6F</color>
+    <color name="vip_title_text">#3E3E3E</color>
+    <color name="vip_title_comment">#999999</color>
+    <color name="vip_title_face">#C9C9C9</color>
+    <color name="vip_divider_height">#F2F2F2</color>
+
 </resources>

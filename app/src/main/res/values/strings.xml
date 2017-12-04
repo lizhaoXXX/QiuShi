@@ -10,4 +10,12 @@
 
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <!--专享-->
+    <string name="head_portrait">Head portrait</string>
+    <string name="good">good</string>
+    <string name="bad">bad</string>
+    <string name="reply">Reply</string>
+    <string name="share">share</string>
+    <string name="pictures">Pictures about the article</string>
 </resources>
