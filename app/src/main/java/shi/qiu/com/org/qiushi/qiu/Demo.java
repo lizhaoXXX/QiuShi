@@ -5,4 +5,7 @@ package shi.qiu.com.org.qiushi.qiu;
  * @date 2017/12/4
  * $desc
  */
-public class Demo {}
+public class Demo {
+	
+	//测试
+}
