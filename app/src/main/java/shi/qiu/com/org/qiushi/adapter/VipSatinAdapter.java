@@ -1,9 +1,6 @@
 package shi.qiu.com.org.qiushi.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +10,6 @@ import android.widget.TextView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.BitmapImageViewTarget;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -117,7 +112,8 @@ public class VipSatinAdapter extends DelegateAdapter.Adapter<RecyclerView.ViewHo
 		VipBean vipBean = mData.get(position);
 		holder.mName.setText(vipBean.getName());
 		holder.mContent.setText(vipBean.getContent());
-		Glide.with(mContext).load(vipBean.getImage()).into(holder.mContentIcon);
+		/*Glide
+			.with(mContext).load(vipBean.getImage()).into(holder.mContentIcon);
 		Glide.with(mContext).load(vipBean.getIcon()).asBitmap().centerCrop().into(new BitmapImageViewTarget(holder.mHead) {
 			@Override
 			protected void setResource(Bitmap resource) {
@@ -126,14 +122,14 @@ public class VipSatinAdapter extends DelegateAdapter.Adapter<RecyclerView.ViewHo
 				circularBitmapDrawable.setCircular(true);
 				holder.mHead.setImageDrawable(circularBitmapDrawable);
 			}
-		});
+		});*/
 	}
 	
 	private void showTextType(final VipSatinTextViewHolder holder, int position) {
 		VipBean vipBean = mData.get(position);
 		holder.mName.setText(vipBean.getName());
 		holder.mContent.setText(vipBean.getContent());
-		Glide.with(mContext).load(vipBean.getIcon()).asBitmap().centerCrop().into(new BitmapImageViewTarget(holder.mHead) {
+		/*Glide.with(mContext).load(vipBean.getIcon()).asBitmap().centerCrop().into(new BitmapImageViewTarget(holder.mHead) {
 			@Override
 			protected void setResource(Bitmap resource) {
 				RoundedBitmapDrawable circularBitmapDrawable =
@@ -141,7 +137,7 @@ public class VipSatinAdapter extends DelegateAdapter.Adapter<RecyclerView.ViewHo
 				circularBitmapDrawable.setCircular(true);
 				holder.mHead.setImageDrawable(circularBitmapDrawable);
 			}
-		});
+		});*/
 	}
 	
 	@Override

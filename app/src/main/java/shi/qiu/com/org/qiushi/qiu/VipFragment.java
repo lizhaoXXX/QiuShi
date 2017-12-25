@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
@@ -47,9 +46,6 @@ public class VipFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View inflate = View.inflate(getActivity(), R.layout.fragment_vip, null);
-		TextView textView = inflate.findViewById(R.id.tv_text);
-		Bundle arguments = getArguments();
-		textView.setText(arguments.getString("title"));
 		
 		mRecyclerView = inflate.findViewById(R.id.recycler_recycler_view);
 		return inflate;
@@ -87,16 +83,17 @@ public class VipFragment extends Fragment {
 	
 	private void refreshData() {
 		List<VipBean> data = new ArrayList<>();
+		VipBean vipBean;
 		        for (int i = 0; i < 20; i++) {
 		        	if (i % 2 == 0) {
-						VipBean vipBean = new VipBean();
+						 vipBean = new VipBean();
 						vipBean.setType(0);
 						vipBean.setName("Demo" + i);
 						vipBean.setContent("ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
 						vipBean.setIcon("http://img.zcool.cn/community/01b17358ad6c33a801219c7742145f.jpg@2o.jpg");
 						data.add(vipBean);
 					}else {
-						VipBean vipBean = new VipBean();
+						 vipBean = new VipBean();
 						vipBean.setType(1);
 						vipBean.setName("Demo" + i);
 						vipBean.setContent("ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd22222222222222222222222222222222222222222222222222222222222");
@@ -109,5 +106,14 @@ public class VipFragment extends Fragment {
 		        }
 		
 		mVipSatinAdapter.addData(data);
+	}
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if (mVipSatinAdapter != null){
+			mVipSatinAdapter = null;
+		}
+	mRecyclerView.setAdapter(null);
 	}
 }

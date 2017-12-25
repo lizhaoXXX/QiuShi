@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/zxing_barcode_scanner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:zxing_possible_result_points="@color/color_white"
+        app:zxing_viewfinder_laser="@color/title_state_color"
+        app:zxing_preview_scaling_strategy="fitXY" />
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/title_state_color"
+        app:titleTextColor="@color/color_white"
+        app:title="二维码/条码"
+        android:layout_alignParentTop="true"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/title_state_color"
+        android:layout_alignParentBottom="true"
+        android:text="打开闪关灯"
+        android:visibility="gone"
+        android:textColor="@color/color_white"
+        />
+</RelativeLayout>

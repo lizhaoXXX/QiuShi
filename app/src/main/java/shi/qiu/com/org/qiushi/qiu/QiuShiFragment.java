@@ -59,9 +59,9 @@ public class QiuShiFragment extends Fragment {
 		
 		List<Fragment> fragmentData = new ArrayList<>();
 		int size = mData.size();
+		
 		for (int i = 0; i < size; i++) {
-			
-			fragmentData.add(VipFragment.newInstance("页面：" + i));
+			fragmentData.add(VipFragment.newInstance("页面：" ));
 		}
 		mViewPager.setAdapter(new ItemsDetailPagerAdapter(getChildFragmentManager(), null, mData, fragmentData));
 		mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
@@ -170,5 +170,14 @@ public class QiuShiFragment extends Fragment {
 	@Override
 	public void onAttach(Context context) {
 		super.onAttach(context);
+	}
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if (!mData.isEmpty()){
+			mData.clear();
+		}
+		mViewPager.setAdapter(null);
 	}
 }

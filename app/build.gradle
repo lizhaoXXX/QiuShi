@@ -28,10 +28,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     /**多种样式的布局*/
-    compile ('com.alibaba.android:vlayout:1.2.6@aar') {
+    compile('com.alibaba.android:vlayout:1.2.6@aar') {
         transitive = true
     }
 
     /**图片的加载，显示*/
     compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    /**zxing安卓第三方开源扫码库*/
+    compile 'com.journeyapps:zxing-android-embedded:3.5.0'
 }

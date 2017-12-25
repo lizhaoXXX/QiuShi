@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
+
+    <SurfaceView
+        android:id="@+id/sf_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        />
+
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iv_take_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/round_gray"
+        android:scaleType="center"
+        android:src="@mipmap/round"
+        android:layout_marginBottom="40dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="轻触拍照 长按摄像"
+        android:textSize="12sp"
+        android:textColor="@color/color_white"
+        android:layout_above="@+id/iv_take_photo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        />
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/down_load"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="40dp"
+        />
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iv_take"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/take"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentEnd="true"
+        />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iv_showPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"/>
+</RelativeLayout>

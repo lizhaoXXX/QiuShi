@@ -13,4 +13,10 @@
     <style name="tab_text_size" parent="Base.Widget.AppCompat.Toolbar">
         <item name="android:textSize">16sp</item>
     </style>
+
+    <!-- name 是Style的名称，parent 继承那个父类样式 -->
+    <style name="theme_fullScreen" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item> <!-- 设置无标题 -->
+        <item name="android:windowFullscreen">?android:windowNoTitle</item>
+    </style>
 </resources>

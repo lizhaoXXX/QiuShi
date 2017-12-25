@@ -4,7 +4,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import shi.qiu.com.org.qiushi.friend.FriendFragment;
+import shi.qiu.com.org.qiushi.me.MeFragment;
+import shi.qiu.com.org.qiushi.notes.NotesFragment;
 import shi.qiu.com.org.qiushi.qiu.QiuShiFragment;
+import shi.qiu.com.org.qiushi.tv.TvFragment;
 
 /**
  * @author azhao
@@ -22,13 +26,13 @@ public class HomeViewPagerAdapter extends FragmentPagerAdapter {
 		    case 0:
 		    return QiuShiFragment.newInstance();
 			case 1:
-				return QiuShiFragment.newInstance();
+				return FriendFragment.newInstance("糗友圈");
 			case 2:
-				return QiuShiFragment.newInstance();
+				return TvFragment.newInstance("直播");
 			case 3:
-				return QiuShiFragment.newInstance();
+				return NotesFragment.newInstance("小纸条");
 			case 4:
-				return QiuShiFragment.newInstance();
+				return MeFragment.newInstance("我");
 		    default:
 		        break;
 		}

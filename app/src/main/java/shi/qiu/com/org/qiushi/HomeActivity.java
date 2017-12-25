@@ -1,9 +1,12 @@
 package shi.qiu.com.org.qiushi;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 
 import shi.qiu.com.org.qiushi.adapter.HomeViewPagerAdapter;
@@ -28,6 +31,10 @@ public class HomeActivity extends AppCompatActivity {
 		navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 		mViewPager = findViewById(R.id.vp_view_pager);
 		mViewPager.setAdapter(new HomeViewPagerAdapter(getSupportFragmentManager()));
+		
+		ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+		int memoryClass = am.getMemoryClass();
+		Log.i(getClass().getName()+"==", "memoryClass ="+memoryClass);
 	}
 	
 	private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {

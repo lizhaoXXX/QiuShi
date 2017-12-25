@@ -6,6 +6,7 @@
     android:background="@color/color_white"
     >
 
+    <!--头像 + 名称-->
     <RelativeLayout
         android:id="@+id/rl_head"
         android:layout_width="match_parent"
@@ -37,19 +38,24 @@
             />
     </RelativeLayout>
 
+    <!--段子-->
     <TextView
         android:id="@+id/tv_vip_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl_head"
         android:ellipsize="end"
-        android:maxLines="10"
+        android:maxLines="1"
         android:paddingEnd="15dp"
         android:paddingStart="15dp"
         android:textColor="@color/vip_title_text"
         android:textSize="@dimen/vip_text_16sp"
+        android:text="111111111111111111111111111111111111111111"
+        android:drawablePadding="0dp"
+        android:drawableRight="@drawable/ic_sentiment_very_satisfied_black_24dp"
         />
-
+    230400
+    <!--点赞，评论数，分享-->
     <RelativeLayout
         android:id="@+id/rl_comment"
         android:layout_width="match_parent"
