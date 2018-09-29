@@ -18,4 +18,7 @@
     <string name="reply">Reply</string>
     <string name="share">share</string>
     <string name="pictures">Pictures about the article</string>
+
+    <!--我-->
+    <string name="me_personal">个人中心</string>
 </resources>

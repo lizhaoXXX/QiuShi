@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 
+import java.net.Socket;
+
 import shi.qiu.com.org.qiushi.adapter.HomeViewPagerAdapter;
 import shi.qiu.com.org.qiushi.helper.BottomNavigationViewHelper;
 import shi.qiu.com.org.qiushi.view.NoScrollLazyViewPager;
@@ -21,6 +23,7 @@ import shi.qiu.com.org.qiushi.view.NoScrollLazyViewPager;
 public class HomeActivity extends AppCompatActivity {
 	
 	private NoScrollLazyViewPager mViewPager;
+	private Socket                mSocket;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +37,11 @@ public class HomeActivity extends AppCompatActivity {
 		
 		ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
 		int memoryClass = am.getMemoryClass();
-		Log.i(getClass().getName()+"==", "memoryClass ="+memoryClass);
+		Log.i(getClass().getName() + "==", "memoryClass =" + memoryClass);
+		
+		
 	}
+	
 	
 	private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
 		
@@ -63,4 +69,6 @@ public class HomeActivity extends AppCompatActivity {
 			return false;
 		}
 	};
+	
+	
 }

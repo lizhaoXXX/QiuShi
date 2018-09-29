@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -39,7 +40,7 @@ public class ScanningActivity extends AppCompatActivity{
 			public void onClick(View v) {
 				IntentIntegrator intentIntegrator = new IntentIntegrator(ScanningActivity.this);
 				// 扫码的类型,可选：一维码，二维码，一/二维码
-				intentIntegrator.setDesiredBarcodeFormats(IntentIntegrator.ONE_D_CODE_TYPES)
+				intentIntegrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
 								// 设置提示语
 								.setPrompt("请对准二维码")
 								// 选择摄像头,可使用前置或者后置
@@ -68,9 +69,22 @@ public class ScanningActivity extends AppCompatActivity{
 	}
 	
 	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		super.onRestoreInstanceState(savedInstanceState);
+	}
+	
+	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-		Log.i(getClass().getName()+"==", "扫码结果 111111");
+		if (resultCode == 100){
+			String result1 = data.getStringExtra("result");
+			Log.i(getClass().getName()+"==", "扫码结果 111111");
+			if (!TextUtils.isEmpty(result1)){
+				Toast
+					.makeText(this, result1, Toast.LENGTH_LONG).show();
+			}
+		}
+		
 		if(result != null) {
 			if(result.getContents() == null) {
 				Toast

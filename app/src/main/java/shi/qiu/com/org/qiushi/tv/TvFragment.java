@@ -28,9 +28,7 @@ public class TvFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		View inflate = View.inflate(getActivity(), R.layout.fragment_friends, null);
-		AppCompatButton textView = inflate.findViewById(R.id.tv_text);
 		Bundle arguments = getArguments();
-		textView.setText(arguments.getString("title"));
 		return inflate;
 	}
 }

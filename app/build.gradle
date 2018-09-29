@@ -1,4 +1,17 @@
 apply plugin: 'com.android.application'
+apply plugin: 'bugly'
+
+bugly {
+    // 注册时分配的App ID
+    appId = '9655a704cb'
+    // 注册时分配的App Key
+    appKey = '17c6ac7e-83f3-48f0-8a36-a736fed95ae2'
+    //调试模式打开
+    debug = true
+    upload = true;
+    uploadMapping = true;
+    uploadSymbol = true;
+}
 
 android {
     compileSdkVersion 26
@@ -9,6 +22,20 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        applicationId "shi.qiu.com.org.qiushi" //JPush上注册的包名.
+
+            ndk {
+                //选择要添加的对应cpu类型的.so库。
+                abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+                // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+            }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "da1d9beaabaedc6b4bfda187", //JPush上注册的包名对应的appKey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
     }
     buildTypes {
         release {
@@ -19,22 +46,38 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
     /**多种样式的布局*/
-    compile('com.alibaba.android:vlayout:1.2.6@aar') {
+    implementation('com.alibaba.android:vlayout:1.2.6@aar') {
         transitive = true
     }
-
     /**图片的加载，显示*/
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
     /**zxing安卓第三方开源扫码库*/
-    compile 'com.journeyapps:zxing-android-embedded:3.5.0'
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+    implementation 'cn.jiguang.sdk:jpush:3.0.9'
+    // 此处以JPush 3.0.9 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:1.1.7'
+    // 此处以JCore 1.1.7 版本为例。
+    /**rx框架*/
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.5'
+    /**6.0的权限申请*/
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    implementation 'com.google.code.gson:gson:2.2.4'
+
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+
+
+    //分包
+    implementation 'com.android.support:multidex:1.0.1'
 }

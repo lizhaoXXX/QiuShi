@@ -8,4 +8,8 @@
     <dimen name="vip_text_12sp">12sp</dimen>
     <dimen name="vip_text_comment_12dp">12dp</dimen>
     <dimen name="vip_text_name_8dp">8dp</dimen>
+
+    <!--ME-->
+    <dimen name="me_margin_top">5dp</dimen>
+    <dimen name="me_padding_start">12dp</dimen>
 </resources>
